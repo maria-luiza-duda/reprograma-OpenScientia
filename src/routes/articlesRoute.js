@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const controller = require("../controllers/tradutorController")
+const controller = require("../controllers/translateController")
 
 router.get("/", controller.getAllArticles)
 router.post("/", controller.createArticle)

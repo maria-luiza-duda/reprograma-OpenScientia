@@ -1,5 +1,6 @@
 const articles = require("../models/articles.json")
 const authors = require("../models/authors.json")
+const users = require("../models/users.json")
 const fs = require("fs")
 
 const getAllArticles = (req, res) => {
@@ -226,6 +227,89 @@ const deleteAuthorProfile = (req, res) => {
     }
 }
 
+const getAllUsers = (req, res) => {
+    console.log(req.url)
+    res.status(200).send(users)
+}
+
+const createUserProfile = (req, res) => {
+    const { id, name, photo, naturality, gender, age, levelOfEducation, areasOfInterest, email, curriculumLattes, researchGate, linkedIn } = req.body
+    users.push({ id, name, photo, naturality, gender, age, levelOfEducation, areasOfInterest, email, curriculumLattes, researchGate, linkedIn })
+    fs.writeFile("./src/models/users.json", JSON.stringify(users), 'utf8', function (err) { 
+        if (err) {
+            res.status(500).send({ message: err })
+        } else {
+            console.log(`Welcome to Open ScienTIa, ${user}!`)
+            const userFound = user.find(user => user.id == id)      
+            res.status(200).send(userFound)
+        }
+    })
+}
+
+const getByIDUsers = (req, res) => {
+    const userId = req.params.id
+    const userFound = users.find((user) => user.id == userId)
+    if (userFound) {
+        res.status(200).send(userFound)
+    } else {
+        res.status(404).send({ message: "User not found!" })
+    }
+}
+
+const updateUserProfile = (req, res) => {
+    try {
+        const userId = req.params.id
+        const userToUpdate = req.body 
+
+        const userFound = users.find(user => user.id == userId)       
+        const userIndex = users.indexOf(userFound) 
+
+        if (userIndex >= 0) { 
+            users.splice(userIndex, 1, userToUpdate) 
+        } else {
+            res.status(404).send({ message: "User profile not found to be update!" })
+        }
+
+        fs.writeFile("./src/models/users.json", JSON.stringify(users), 'utf8', function (err) { 
+            if (err) {
+                res.status(500).send({ message: err }) 
+            } else {
+                console.log("User profile updated succesful!")
+                const userUpdated = user.find(user => user.id == userId) 
+                res.status(200).send(userUpdated) 
+            }
+        })
+    } catch (err) {
+        res.status(500).send({ message: err })
+    }
+}
+
+const deleteUserProfile = (req, res) => {
+    try {
+        const userId = req.params.id
+        const userFound = users.find(user => user.id == userId) 
+        const userIndex = users.indexOf(userFound) 
+
+        if (userIndex >= 0) { 
+            user.splice(userIndex, 1) 
+        } else {
+            res.status(404).send({ message: "User profile not found to be deleted..." })
+        }
+
+        fs.writeFile("./src/models/users.json", JSON.stringify(users), 'utf8', function (err) { 
+            if (err) {
+                res.status(500).send({ message: err })
+            } else {
+                console.log("User profile succesful deleted!")
+                res.sendStatus(204)
+            }
+        })
+    } catch (err) {
+        console.log(err)
+        res.status(500).send({ message: "Can't delete this user..." })
+    }
+}
+
 module.exports = {
     getAllArticles,
     createArticle,
@@ -238,6 +322,10 @@ module.exports = {
     getByIDAuthors,
     updateAuthorProfile,
     updateFollowingStatus,
-    deleteAuthorProfile
-
+    deleteAuthorProfile,
+    getAllUsers,
+    createUserProfile,
+    getByIDUsers,
+    updateUserProfile,
+    deleteUserProfile
 }
