@@ -1,13 +1,15 @@
+require('dotenv-safe').config()
+
 const express = require("express")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 
 const app = express()
 
-mongoose.connect("mongodb://localhost:27017/openScientia", { 
+mongoose.connect(process.env.MONGODB_URL, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true 
-})
+});
 
 let db = mongoose.connection;
 

@@ -1,3 +1,5 @@
+const secret = process.env.SECRET
+
 const articles = require("../models/articles")
 const authors = require("../models/authors")
 const users = require("../models/users")
