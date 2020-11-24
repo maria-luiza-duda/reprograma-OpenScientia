@@ -1,19 +1,18 @@
-const { link } = require('fs');
 const mongoose = require('mongoose');
 
 const usersSchema = new mongoose.Schema({
     id: {type : Number},
     name: {type : String},
-    photo: {type : Document},
+    photo: {type : String},
     naturality: {type : String},
     gender: {type : String},
     age: {type : Number},
     levelOfEducation: {type : String},
     areasOfInterest: {type : String},
     email: {type : String},
-    curriculumLattes: {type : link},
-    researchGate: {type : link},
-    linkedIn: {type : link},
+    curriculumLattes: {type : String},
+    researchGate: {type : String},
+    linkedIn: {type : String},
 },{
     versionKey: false
 });

@@ -1,4 +1,3 @@
-const { link } = require('fs');
 const mongoose = require('mongoose');
 
 const articlesSchema = new mongoose.Schema({
@@ -17,7 +16,8 @@ const articlesSchema = new mongoose.Schema({
     languages: {type : String}, 
     periodicOfArticle: {type : String},
     yearOfPublication: {type : Number},
-    linkDOI: {type : link},
+    linkDOI: {type : String},
+    images: {type : String},
     read: {type : Boolean}
 },{
     versionKey: false

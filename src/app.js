@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 
 const app = express()
 
-mongoose.connect("mongodb://localhost:27017/reprograma", { 
+mongoose.connect("mongodb://localhost:27017/openScientia", { 
     useNewUrlParser: true, 
     useUnifiedTopology: true 
 })
