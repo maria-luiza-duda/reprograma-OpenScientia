@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const usersSchema = new mongoose.Schema({
+const usersSchema = new Schema({
     id: {type : Number},
     nameUser: {type : String},
     photo: {type : String},
@@ -10,9 +11,7 @@ const usersSchema = new mongoose.Schema({
     levelOfEducation: {type : String},
     areasOfInterest: {type : String},
     email: {type : String},
-    curriculumLattes: {type : String},
-    researchGate: {type : String},
-    linkedIn: {type : String},
+    password: {type : String}
 },{
     versionKey: false
 });

@@ -1,9 +1,12 @@
 const secret = process.env.SECRET
-
+const articles = require("../models/articles")
 const authors = require("../models/authors")
 const users = require("../models/users")
 const fs = require("fs")
 
+//articlesRoutes
+
+//Para retornar todos os artigos
 const getAllArticles = (req, res) => {
     console.log(req.url)
     articles.find(function(err, articles){
@@ -14,6 +17,7 @@ const getAllArticles = (req, res) => {
     })
 }
 
+//Para adicionar um novo artigo
 const createArticle = (req, res) => {
     console.log(req.body);
     let article = new articles(req.body);
@@ -21,13 +25,14 @@ const createArticle = (req, res) => {
     if (err) {
         res.status(500).send({ message: err.message})
     }
-        res.status(201).send(article.toJSON())
+        res.status(201).send(article())
     })
 }
 
-const getByIDArticles = (req, res) => {
-    const articleId = req.params.id
-    articles.find({ id }, function(err, articles){
+//Para retornar artigos com filtros específicos
+const getArticlesByTitle = (req, res) => {
+    const title = req.params.title
+    articles.find({ title }, function(err, articles){
     if (err) {
         res.status(500).send({ message: err.message})
     }
@@ -35,7 +40,7 @@ const getByIDArticles = (req, res) => {
     })
 }
 
-const getByTitleArticles = (req, res) => {
+const getArticlesByAuthors = (req, res) => {
     const articleTitle = req.params.title
     articles.find({ title }, function(err, articles){
     if (err) {
@@ -435,12 +440,12 @@ const deleteUserProfile = (req, res) => {
         }
     
     })
-}
+}*/
 
 module.exports = {
     getAllArticles,
     createArticle,
-    getByIDArticles,
+    getArticlesByTitle,
     getByTitleArticles,
     getByAuthorArticles,
     getByCitationArticles,
@@ -475,5 +480,5 @@ module.exports = {
     getByIDUsers,
     getByNameUsers,
     updateUserProfile,
-    deleteUserProfile
+    deleteUserProfile*/
 }
