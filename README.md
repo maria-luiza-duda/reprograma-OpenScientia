@@ -1,6 +1,6 @@
 # OpenScientia Projeto Final Backend {Reprograma}
 
-Olá, este é o meu projeto final de Backend da Reprograma, o OpenScientia.
+## Olá, este é o meu projeto final de Backend da Reprograma, o OpenScientia.
 
 Surgiu da necessidade de comunicar a ciência de forma simples para pessoas que não são da área acadêmica, mas que desejam se atualizar com informações extraídas de artigos científicos publicados. Seu objetivo principal é democratizar o acesso a informação produzida pelas universidades públicas.
 

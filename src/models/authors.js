@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 
 const authorsSchema = new mongoose.Schema({
+    //perfil deste autor
     id: {type : Number},
-    author: {type : String},
+    name: {type : String},
     photo: {type : String},
-    citationNameAuthor: {type : String},
+    citationName: {type : String},
     articlesFirstAuthor: {type : String},
     articlesCoAuthor: {type : String},
     nationality: {type : String},
@@ -18,7 +19,26 @@ const authorsSchema = new mongoose.Schema({
     curriculumLattes: {type : String},
     researchGate: {type : String},
     linkedIn: {type : String},
-    following: {type : Boolean}
+    following: {type : Boolean},
+    //artigos deste autor
+    idArticle: {type: Number},
+    title: {type : String},
+    author: {type : String},
+    citationNameAuthor: {type : String},
+    resumen: {type : String},
+    introduction: {type : String},
+    methods: {type : String},
+    results: {type : String},
+    keywords: {type : String},
+    researchCountry: {type : String},
+    areasOfStudy: {type : String},
+    subareasOfStudy: {type : String},
+    languages: {type : String}, 
+    periodicOfArticle: {type : String},
+    yearOfPublication: {type : Number},
+    linkDOI: {type : String},
+    images: {type : String},
+    read: {type : Boolean}
 },{
     versionKey: false
 });
