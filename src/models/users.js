@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 const usersSchema = new Schema({
     id: {type : Number},
-    nameUser: {type : String},
+    name: {type : String},
     photo: {type : String},
     naturality: {type : String},
     gender: {type : String},
     age: {type : Number},
     levelOfEducation: {type : String},
-    areasOfInterest: {type : String},
+    areas: {type : String},
     email: {type : String},
     password: {type : String}
 },{

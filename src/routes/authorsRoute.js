@@ -19,16 +19,16 @@ router.get("/:citation", controller.getAuthorsByCitation)
 //Atualizar o perfil de autor
 router.patch("/:name", controller.updateAuthorName)
 router.patch("/:photo", controller.updateAuthorPhoto)
-router.patch("/:citationName", controller.updateAuthorCitation)
+router.patch("/:citation", controller.updateAuthorCitation)
 router.patch("/:nationality", controller.updateAuthorNationality)
 router.patch("/:gender", controller.updateAuthorGender)
 router.patch("/:age", controller.updateAuthorAge)
 router.patch("/:currentAffiliation", controller.updateAuthorAffiliation)
-router.patch("/:areasOfStudy", controller.updateAuthorAreas)
+router.patch("/:areas", controller.updateAuthorAreas)
 router.patch("/:currentProject", controller.updateAuthorProject)
 router.patch("/:email", controller.updateAuthorEmail)
-router.patch("/:curriculumLattes", controller.updateAuthorLattes)
-router.patch("/:researchGate", controller.updateAuthorGale)
+router.patch("/:lattes", controller.updateAuthorLattes)
+router.patch("/:researchGate", controller.updateAuthorGate)
 router.patch("/:linkedIn", controller.updateAuthorLinkedin)
 
 //Atualizar o status de "follow" de perfis outros autores
@@ -38,6 +38,6 @@ router.patch("/:id/following", controller.updateFollowingStatus)
 router.patch("/:id/read", controller.updateReadStatus)
 
 //Deleção de perfil do autor (feita apenas pelo autor que postou o artigo)
-router.delete("/:id", controller.deleteProfileAuthor)
+router.delete("/:id", controller.deleteAuthor)
 
 module.exports = router;
