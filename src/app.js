@@ -1,5 +1,3 @@
-require('dotenv-safe').config()
-
 const express = require("express")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
@@ -23,7 +21,7 @@ const articles = require("./routes/articlesRoute")
 const authors = require("./routes/authorsRoute")
 const users = require("./routes/usersRoute")
 
-app.use(express.json());
+//app.use(express());
 app.use(bodyParser.json());
 
 app.use(function (req, res, next) {

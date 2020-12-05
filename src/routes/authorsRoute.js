@@ -1,7 +1,6 @@
-require('dotenv-safe').load()
-const express = require("express")
+const express = require('express')
 const router = express.Router()
-const controller = require("../controllers/translateController")
+const controller = require('../controllers/translateController.js')
 
 //Filtrar todos os perfis de autores cadastrados
 router.get("/", controller.getAllAuthors)
@@ -17,6 +16,7 @@ router.get("/:name", controller.getAuthorsByName)
 router.get("/:citation", controller.getAuthorsByCitation)
 
 //Atualizar o perfil de autor
+router.put("/", controller.updateAuthor)
 router.patch("/:name", controller.updateAuthorName)
 router.patch("/:photo", controller.updateAuthorPhoto)
 router.patch("/:citation", controller.updateAuthorCitation)

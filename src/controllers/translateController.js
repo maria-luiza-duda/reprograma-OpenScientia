@@ -1,4 +1,3 @@
-const secret = process.env.SECRET
 const articles = require("../models/articles")
 const authors = require("../models/authors")
 const users = require("../models/users")
@@ -231,17 +230,6 @@ const updateArticleCountry = (req, res) => {
   
 }
 
-const updateArticleCountry = (req, res) => {
-    const country = req.params.country
-    articles.update({ country }, { $set : req.body}, function (err) {
-      if (err) {
-          res.status(500).send({ message: err.message })
-      }
-      res.status(200).send({ message: "Research Country updated succesfuly!"})
-    })
-  
-}
-
 const updateArticleAreas = (req, res) => {
     const areas = req.params.areas
     articles.update({ areas }, { $set : req.body}, function (err) {
@@ -394,6 +382,16 @@ const getAuthorsByCitation = (req, res) => {
 }
 
 //Para atualizar o perfil do autor
+const updateAuthor = (req, res) => {
+    const authors = req.params.authors
+    authors.update({ name }, { $set : req.body}, function (err) {
+        if (err) {
+            res.status(500).send({ message: err.message })
+        }
+        res.status(200).send({ message: "Name updated succesfuly!"})
+    })
+}
+
 const updateAuthorName = (req, res) => {
     const name = req.params.name
     authors.update({ name }, { $set : req.body}, function (err) {
@@ -619,6 +617,16 @@ const createProfileUser = (req, res) => {
 }
 
 //Para atualizar os usuários com parâmetros específicos
+const updateUser = (req, res) => {
+    const user = req.params.user
+    users.update({ name }, { $set : req.body}, function (err) {
+        if (err) {
+            res.status(500).send({ message: err.message })
+        }
+        res.status(200).send({ message: "User's name updated succesfuly!"})
+    })
+}
+
 const updateUserName = (req, res) => {
     const name = req.params.name
     users.update({ name }, { $set : req.body}, function (err) {
@@ -769,6 +777,7 @@ module.exports = {
     createAuthorProfile,
     getAuthorsByName,
     getAuthorsByCitation,
+    updateAuthor,
     updateAuthorName,
     updateAuthorPhoto,
     updateAuthorCitation,
@@ -789,6 +798,7 @@ module.exports = {
     getUserByID,
     getUserByName,
     createProfileUser,
+    updateUser,
     updateUserName,
     updateUserPhoto,
     updateUserNaturality,

@@ -1,7 +1,9 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose")
+const mongoDB = 'mongodb://127.0.0.1:27017';
+mongoose.connect(mongoDB, {  useNewUrlParser: true,
+    useUnifiedTopology: true   });
 
-const usersSchema = new Schema({
+const usersSchema = new mongoose.Schema({
     id: {type : Number},
     name: {type : String},
     photo: {type : String},
@@ -16,6 +18,9 @@ const usersSchema = new Schema({
     versionKey: false
 });
 
-const users = mongoose.model('users', usersSchema);
+const usersModel = new mongoose.model("users", usersSchema);
 
-module.exports = users;
+module.exports = {
+usersModel,
+usersSchema
+}

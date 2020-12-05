@@ -1,7 +1,7 @@
-require('dotenv-safe').load()
-const express = require("express")
+const express = require('express')
 const router = express.Router()
-const controller = require("../controllers/translateController")
+const controller = require('../controllers/translateController.js')
+//const articles = require('../models/articles')
 
 //Filtrar todos os artigos postados por outros autores cadastrados
 router.get("/", controller.getAllArticles)
@@ -21,7 +21,7 @@ router.get("/:year", controller.getArticlesByYear)
 router.post("/", controller.createArticle)
 
 //Atualizar os artigos (apenas para os artigos postados por seus respectivos autores cadastrados)
-router.patch("/:id", controller.updateArticle)
+router.put("/", controller.updateArticle)
 router.patch("/:title", controller.updateArticleTitle)
 router.patch("/:author", controller.updateArticleAuthor)
 router.patch("/:citation", controller.updateArticleCitation)
@@ -40,3 +40,5 @@ router.patch("/:images", controller.updateArticleImages)
 
 //Deleção de artigo (feita apenas pelo autor que postou o artigo)
 router.delete("/:id", controller.deleteArticle)
+
+module.exports = router;

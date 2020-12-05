@@ -1,8 +1,9 @@
-const mongoose = require('mongoose');
-//const { articles } = require('./articles')
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose")
+const mongoDB = 'mongodb://127.0.0.1:27017';
+mongoose.connect(mongoDB, {  useNewUrlParser: true,
+    useUnifiedTopology: true   });
 
-const authorsSchema = new Schema({
+const authorsSchema = new mongoose.Schema({
     //perfil deste autor
     id: {type : Number},
     name: {type : String},
@@ -13,8 +14,7 @@ const authorsSchema = new Schema({
     age: {type : Number},
     currentAffiliation: {type : String},
     areas: {type : String},
-    currentProject: {type : String}, 
-    articles: [{type: Schema.Types.ObjectId, ref: 'articles'}],
+    currentProject: {type : String},
     email: {type : String},
     lattes: {type : String},
     researchGate: {type : String},
@@ -24,6 +24,9 @@ const authorsSchema = new Schema({
     versionKey: false
 });
 
-const authors = mongoose.model('authors', authorsSchema);
+const authorsModel = new mongoose.model("authors", authorsSchema);
 
-module.exports = authors, articles;
+module.exports = {
+authorsModel,
+authorsSchema
+}

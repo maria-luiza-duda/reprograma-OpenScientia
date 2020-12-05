@@ -33,6 +33,9 @@ Itens para inserir um novo artigo na plataforma: título,
 
 #### Atualizar status de leitura de artigos
 ...
+### Entidade Artigos
+...
+
 ### Entidade Usuários
 
 #### Cadastro de novo usuário no OpenScientia

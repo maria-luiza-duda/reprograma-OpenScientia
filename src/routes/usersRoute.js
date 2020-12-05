@@ -1,19 +1,19 @@
-require('dotenv-safe').load()
-const express = require("express")
+const express = require('express')
 const router = express.Router()
-const controller = require("../controllers/translateController")
+const controller = require('../controllers/translateController.js')
 
 //Filtrar todos os perfis de usuári@s cadastrados
 router.get("/", controller.getAllUsers)
 
 //Filtrar um perfil de usuári@ cadastrados
 router.get("/:id", controller.getUserByID)
-router;get("/:name", controller.getUserByName)
+router.get("/:name", controller.getUserByName)
 
 //Criar um novo perfil de usuário (Um registro ??)
 router.post("/", controller.createProfileUser)
 
 //Atualizar o perfil de usuário
+router.put("/", controller.updateUser)
 router.patch("/:name", controller.updateUserName)
 router.patch("/:photo", controller.updateUserPhoto)
 router.patch("/:naturality", controller.updateUserNaturality)
