@@ -1,28 +1,12 @@
 const express = require("express")
-const bodyParser = require("body-parser")
-const mongoose = require("mongoose")
-
 const app = express()
 
-mongoose.connect(process.env.MONGODB_URL, { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true 
-});
-
-let db = mongoose.connection;
-
-db.on("error", console.log.bind(console, "connection error:"))
-db.once("open", function (){
-    console.log("Succesful connection.")
-})
+app.use(express.json())
 
 const index = require("./routes/index")
 const articles = require("./routes/articlesRoute")
 const authors = require("./routes/authorsRoute")
 const users = require("./routes/usersRoute")
-
-//app.use(express());
-app.use(bodyParser.json());
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*") 
