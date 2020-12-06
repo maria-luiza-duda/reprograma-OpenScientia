@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const controller = require('../controllers/translateController.js')
 
-//router.get("/", controller.getAllArticles)
+router.get("/", controller.getAllArticles)
 router.post("/", controller.createArticle)
 router.get("/title", controller.getArticlesByTitle)
 router.get("/author", controller.getArticlesByAuthor)

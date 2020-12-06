@@ -1,7 +1,9 @@
 const articles = require('../models/articles')
 const authors = require('../models/authors')
+const jwt = require('jsonwebtoken');
+const SECRET = process.env.SECRET;
 
-/*const getAllArticles = (req, res) => {
+const getAllArticles = (req, res) => {
     console.log(req.url)
     articles.find(function (err, articles) {
         if (err) {
@@ -10,7 +12,7 @@ const authors = require('../models/authors')
             res.status(200).send(articles)
         }
     })
-}*/
+}
 
 const createArticle = (req, res) => {
     let article = new articles(req.body);
@@ -339,7 +341,7 @@ const deleteAuthor = (req, res) => {
 }
 
 module.exports = {
-    //getAllArticles,
+    getAllArticles,
     createArticle,
     getArticlesByTitle,
     getArticlesByAuthor,
