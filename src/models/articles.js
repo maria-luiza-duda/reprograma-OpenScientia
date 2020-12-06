@@ -13,7 +13,6 @@ const articlesSchema = new mongoose.Schema({
     keywords: {type : String},
     country: {type : String},
     areas: {type : String},
-    languages: {type : String},
     year: {type : Number},
     linkDOI: {type : String},
     images: {type : String},

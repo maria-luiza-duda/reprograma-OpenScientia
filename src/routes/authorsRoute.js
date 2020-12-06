@@ -18,7 +18,6 @@ router.patch("/email", controller.updateAuthorEmail)
 router.patch("/password", controller.updateAuthorPassword)
 router.patch("/lattes", controller.updateAuthorLattes)
 router.patch("/:id/following", controller.updateFollowingStatus)
-router.patch("/:id/read", controller.updateReadStatus)
 router.delete("/:id", controller.deleteAuthor)
 
 module.exports = router;

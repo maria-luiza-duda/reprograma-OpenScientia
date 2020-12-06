@@ -14,37 +14,22 @@ Os pesquisadores poderão se cadastrar, atualizar seus cadastros, cadastrar seus
 Os usuários poderão se cadastrar, atualizar seus cadastros, ler artigos já postados e seguir pesquisadores. 
 
 ## Contratos das entidades
-### Entidade Autores
 
+### Entidade Autores
 #### Cadastro de nov@ pesquisador@ no Open Scientia
 Registro com cadastro de nome completo, nome de citação, nacionalidade, gênero, idade, filiação atual, áreas de estudo/pesquisa, subáreas de estudo/pesquisa, projetos atuais, artigos já cadastrados com primeiro autor, artigos á cadastrados como coautor, inserção de foto, email, curriculo Lattes, conta do researchGate e perfil do LinkedIn.
 
 #### Atualização de perfil de pesquisador@ cadastrad@ 
 Itens para atualização do cadastro (os mesmos do item anterior): nome completo, nome de citação, nacionalidade, gênero, idade, filiação atual, áreas de estudo/pesquisa, subáreas de estudo/pesquisa, projetos atuais, artigos já cadastrados com primeiro autor, artigos á cadastrados como coautor, inserção de foto, email, curriculo Lattes, conta do researchGate e perfil do LinkedIn.
 
+#### Seguir outros pesquisadores
+...
+
+### Entidade Artigos
 #### Inserção de novo artigo no Open Scientia
 Itens para inserir um novo artigo na plataforma: título,
 
 #### Atualização de artigo já postado
-...
-
-#### Seguir outros pesquisadores
-...
-
-#### Atualizar status de leitura de artigos
-...
-### Entidade Artigos
-...
-
-### Entidade Usuários
-
-#### Cadastro de novo usuário no OpenScientia
-...
-
-#### Atualização de perfil de usuário cadastrado
-...
-
-#### Seguir outros pesquisadores
 ...
 
 #### Atualizar status de leitura de artigos

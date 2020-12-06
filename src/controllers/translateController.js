@@ -1,8 +1,7 @@
 const articles = require('../models/articles')
 const authors = require('../models/authors')
-const users = require('../models/users')
 
-const getAllArticles = (req, res) => {
+/*const getAllArticles = (req, res) => {
     console.log(req.url)
     articles.find(function (err, articles) {
         if (err) {
@@ -11,7 +10,7 @@ const getAllArticles = (req, res) => {
             res.status(200).send(articles)
         }
     })
-}
+}*/
 
 const createArticle = (req, res) => {
     let article = new articles(req.body);
@@ -58,17 +57,6 @@ const getArticlesByKeywords = (req, res) => {
 }
 
 const getArticlesByAreas = (req, res) => {
-    const parametros = req.query
-    articles.find(parametros, function (err, articles) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send(articles)
-        }
-    })
-}
-
-const getArticlesByLanguage = (req, res) => {
     const parametros = req.query
     articles.find(parametros, function (err, articles) {
         if (err) {
@@ -219,6 +207,17 @@ const updateArticleImages = (req, res) => {
       } else {
           res.status(200).send({ message: "Images updated succesfuly!"})
       } 
+    })
+}
+
+const updateReadStatus = (req, res) => {
+    const read = req.params.id
+    articles.update({ read }, { $set : req.body}, function (err) {
+      if (err) {
+          res.status(500).send({ message: err.message })
+      } else {
+          res.status(200).send({ message: "Status of read updated succesfuly!"})
+      }
     })
 }
 
@@ -414,7 +413,7 @@ const updateAuthorLattes = (req, res) => {
 
 const updateFollowingStatus = (req, res) => {
     const following = req.params.following
-    articles.update({ following }, { $set : req.body}, function (err) {
+    authors.update({ following }, { $set : req.body}, function (err) {
       if (err) {
           res.status(500).send({ message: err.message })
       } else {
@@ -423,16 +422,7 @@ const updateFollowingStatus = (req, res) => {
     })
 }
 
-const updateReadStatus = (req, res) => {
-    const read = req.params.id
-    articles.update({ read }, { $set : req.body}, function (err) {
-      if (err) {
-          res.status(500).send({ message: err.message })
-      } else {
-          res.status(200).send({ message: "Status of read updated succesfuly!"})
-      }
-    })
-}
+
 
 const deleteAuthor = (req, res) => {
     const id = req.params.id
@@ -460,150 +450,13 @@ const deleteAuthor = (req, res) => {
     })
 }
 
-const getAllUsers = (req, res) => {
-    console.log(req.url)
-    users.find(function(err, users){
-        if (err) {
-            res.status(500).send({ message: err.message})
-        } else {
-        res.status(200).send(users)  
-        } 
-    })
-}
-
-const createProfileUser = (req, res) => {
-    let user = new users(req.body);
-    user.save(function(err){
-        if (err) {
-            res.status(500).send({ message: err.message})
-        } else {
-            res.status(201).send({ message : "User profile succesfull added"})
-        }
-    })
-}
-
-const getUserByName = (req, res) => {
-    const parametros = req.query
-    users.find(parametros, function (err, users) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send(users)
-        }
-    })
-}
-
-const updateUser = (req, res) => {
-    const id = req.params.id
-    users.updateMany({ id }, { $set : req.body}, { upsert : true }, function (err) {
-      if (err) {
-          res.status(500).send({ message: err.message })
-      } else {
-          res.status(200).send({ message: "User updated succesfuly!"})
-      }
-    })
-}
-
-const updateUserName = (req, res) => {
-    const name = req.params.name
-    users.update({ name }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-             res.status(200).send({ message: "User's name updated succesfuly!"})
-        }
-    })
-}
-
-const updateUserNaturality = (req, res) => {
-    const naturality = req.params.naturality
-    users.update({ naturality }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "User's naturality updated succesfuly!"})
-        }
-    })
-}
-
-const updateUserGender = (req, res) => {
-    const gender = req.params.gender
-    users.update({ gender }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "User's gender updated succesfuly!"})
-        }
-    })
-}
-
-const updateUserInterest = (req, res) => {
-    const areas = req.params.areas
-    users.update({ areas }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "Areas of study updated succesfuly!"})
-        }
-    })
-}
-
-const updateUserEmail = (req, res) => {
-    const email = req.params.email
-    users.update({ email }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "Email updated succesfuly!"})
-        }  
-    })
-}
-
-const updateUserPassword = (req, res) => {
-    const password = req.params.password
-    users.update({ password }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "Password updated succesfuly!"})
-        }
-    })
-}
-
-const deleteUserProfile = (req, res) => {
-    const id = req.params.id
-        users.find({ id }, function(err, users){
-        if(users.length > 0){
-            users.deleteMany({ id }, function(err){
-                if (err) {
-                    res.status(500).send({ 
-                    message: err.message,
-                    status: "Fail"
-                    })
-                }
-                res.status(200).send({ 
-                    message: 'User profile deleted succesful!',
-                    status: "Succesful"
-                })
-            })  
-        } else {  
-            res.status(200).send({
-                message: 'User not found to be deleted',
-                status: "Empty"
-            })
-        }
-    
-    })
-}
-
 module.exports = {
-    getAllArticles,
+    //getAllArticles,
     createArticle,
     getArticlesByTitle,
     getArticlesByAuthor,
     getArticlesByKeywords,
     getArticlesByAreas,
-    getArticlesByLanguage,
     getArticlesByYear,
     updateArticle,
     updateArticleTitle,
@@ -635,16 +488,5 @@ module.exports = {
     updateAuthorLattes,
     updateFollowingStatus,
     updateReadStatus,
-    deleteAuthor,
-    getAllUsers,
-    getUserByName,
-    createProfileUser,
-    updateUser,
-    updateUserName,
-    updateUserNaturality,
-    updateUserGender,
-    updateUserInterest,
-    updateUserEmail,
-    updateUserPassword,
-    deleteUserProfile
+    deleteAuthor
 }
