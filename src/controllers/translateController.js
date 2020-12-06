@@ -323,28 +323,6 @@ const updateAuthorCitation = (req, res) => {
     })
 }
 
-const updateAuthorNationality = (req, res) => {
-    const nationality = req.params.nationality
-    authors.update({ nationality }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "Nationality updated succesfuly!"})
-        }
-    })
-}
-
-const updateAuthorGender = (req, res) => {
-    const gender = req.params.gender
-    authors.update({ gender }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "Gender updated succesfuly!"})
-        }
-    })
-}
-
 const updateAuthorAffiliation = (req, res) => {
     const currentAffiliation = req.params.currentAffiliation
     authors.update({ currentAffiliation }, { $set : req.body}, function (err) {
@@ -378,39 +356,6 @@ const updateAuthorProject = (req, res) => {
     })
 }
 
-const updateAuthorEmail = (req, res) => {
-    const email = req.params.email
-    authors.update({ email }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "Email updated succesfuly!"})
-        }
-    })
-}
-
-const updateAuthorPassword = (req, res) => {
-    const password = req.params.password
-    authors.update({ email }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "Email updated succesfuly!"})
-        }
-    })
-}
-
-const updateAuthorLattes = (req, res) => {
-    const lattes = req.params.lattes
-    authors.update({ lattes }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "Curriculum Lattes updated succesfuly!"})
-        }
-    })
-}
-
 const updateFollowingStatus = (req, res) => {
     const following = req.params.following
     authors.update({ following }, { $set : req.body}, function (err) {
@@ -421,8 +366,6 @@ const updateFollowingStatus = (req, res) => {
       }
     })
 }
-
-
 
 const deleteAuthor = (req, res) => {
     const id = req.params.id
@@ -483,9 +426,6 @@ module.exports = {
     updateAuthorAffiliation,
     updateAuthorAreas,
     updateAuthorProject,
-    updateAuthorEmail,
-    updateAuthorPassword,
-    updateAuthorLattes,
     updateFollowingStatus,
     updateReadStatus,
     deleteAuthor

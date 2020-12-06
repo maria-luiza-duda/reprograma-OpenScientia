@@ -8,14 +8,11 @@ const authorsSchema = new mongoose.Schema({
     id: {type : Number},
     name: {type : String},
     citation: {type : String},
-    nationality: {type : String},
-    gender: {type : String},
     currentAffiliation: {type : String},
     areas: {type : String},
     currentProject: {type : String},
     email: {type : String},
     password: {type : String},
-    lattes: {type : String},
     following: {type : Boolean},
 },{
     versionKey: false
