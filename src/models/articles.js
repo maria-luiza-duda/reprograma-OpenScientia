@@ -1,7 +1,4 @@
 const mongoose = require("mongoose")
-const mongoDB = 'mongodb://127.0.0.1:27017';
-mongoose.connect(mongoDB, {  useNewUrlParser: true,
-    useUnifiedTopology: true   });
 
 const articlesSchema = new mongoose.Schema({
     //artigos postados dos autores
@@ -18,9 +15,6 @@ const articlesSchema = new mongoose.Schema({
     versionKey: false
 });
 
-const articlesModel = new mongoose.model("articles", articlesSchema);
+const articles = mongoose.model('articles', articlesSchema);
 
-module.exports = {
-articlesModel,
-articlesSchema
-}
+module.exports = articles;

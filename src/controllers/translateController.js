@@ -1,10 +1,10 @@
 const articles = require('../models/articles')
 const authors = require('../models/authors')
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
 
 const getAllArticles = (req, res) => {
-    console.log(req.url)
     articles.find(function (err, articles) {
         if (err) {
             res.status(500).send({ message: err.message})
@@ -204,16 +204,36 @@ const getAllAuthors = (req, res) => {
     })
 }
 
-const createAuthorProfile = (req, res) => {
-    let author = new authors(req.body);
-    author.save(function(err){
-        if (err) {
-            res.status(500).send({ message: err.message})
-        } else {
-            res.status(201).send({ message : "Author profile succesfull added"})
-        }
-    })
+const createPassword = (req, res) => {
+    const password = bcrypt.hashSync(req.body.password, 10);
+  req.body.password = password;
+  const authors = new authors(req.body);
+  authors.save(function(err) {
+    if (err) {
+      res.status(500).send({ message: err.message })
+    } else {
+      res.status(201).send(author.toJSON())  
+    }
+  })
 }
+
+const login = (req, res) => {
+    authors.findOne({ email: req.body.email }, function(error, author) {
+      if (!author) {
+        return res.status(404).send(`There is no author with this email ${req.body.email}`);
+      }
+  
+      const rightPassword = bcrypt.compareSync(req.body.password, author.password);
+  
+      if (!rightPassword) {
+        return res.status(403).send('Incorrect password!');
+      }
+  
+      const token = jwt.sign({ email: req.body.email }, SECRET);
+  
+      return res.status(200).send(token);
+    });
+  }
 
 const getAuthorsByName = (req, res) => {
     const parametros = req.query
@@ -357,7 +377,8 @@ module.exports = {
     updateArticleAreas,
     deleteArticle,
     getAllAuthors,
-    createAuthorProfile,
+    createPassword,
+    login,
     getAuthorsByName,
     getAuthorsByCitation,
     updateAuthor,

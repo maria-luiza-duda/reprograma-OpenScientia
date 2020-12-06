@@ -1,7 +1,4 @@
 const mongoose = require("mongoose")
-const mongoDB = 'mongodb://127.0.0.1:27017';
-mongoose.connect(mongoDB, {  useNewUrlParser: true,
-    useUnifiedTopology: true   });
 
 const authorsSchema = new mongoose.Schema({
     //perfil deste autor
@@ -18,9 +15,6 @@ const authorsSchema = new mongoose.Schema({
     versionKey: false
 });
 
-const authorsModel = new mongoose.model("authors", authorsSchema);
+const authors = mongoose.model('authors', authorsSchema);
 
-module.exports = {
-authorsModel,
-authorsSchema
-}
+module.exports = authors;
