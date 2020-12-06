@@ -7,18 +7,15 @@ const authorsSchema = new mongoose.Schema({
     //perfil deste autor
     id: {type : Number},
     name: {type : String},
-    photo: {type : String},
     citation: {type : String},
     nationality: {type : String},
     gender: {type : String},
-    age: {type : Number},
     currentAffiliation: {type : String},
     areas: {type : String},
     currentProject: {type : String},
     email: {type : String},
+    password: {type : String},
     lattes: {type : String},
-    researchGate: {type : String},
-    linkedIn: {type : String},
     following: {type : Boolean},
 },{
     versionKey: false
