@@ -11,11 +11,8 @@ const articlesSchema = new mongoose.Schema({
     resumen: {type : String},
     results: {type : String},
     keywords: {type : String},
-    country: {type : String},
     areas: {type : String},
     year: {type : Number},
-    linkDOI: {type : String},
-    images: {type : String},
     read: {type : Boolean}
 },{
     versionKey: false

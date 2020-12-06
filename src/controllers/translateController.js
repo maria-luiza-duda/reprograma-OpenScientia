@@ -144,17 +144,6 @@ const updateArticleKeywords = (req, res) => {
     })
 }
 
-const updateArticleCountry = (req, res) => {
-    const country = req.params.country
-    articles.update({ country }, { $set : req.body}, function (err) {
-      if (err) {
-          res.status(500).send({ message: err.message })
-      } else {
-          res.status(200).send({ message: "Research Country updated succesfuly!"})
-      }
-    })
-}
-
 const updateArticleAreas = (req, res) => {
     const areas = req.params.areas
     articles.update({ areas }, { $set : req.body}, function (err) {
@@ -163,50 +152,6 @@ const updateArticleAreas = (req, res) => {
       } else {
           res.status(200).send({ message: "Areas of study updated succesfuly!"})
       }
-    })
-}
-
-const updateArticleLanguage = (req, res) => {
-    const languages = req.params.languages
-    articles.update({ languages }, { $set : req.body}, function (err) {
-      if (err) {
-          res.status(500).send({ message: err.message })
-      } else {
-          res.status(200).send({ message: "Languages updated succesfuly!"})
-      } 
-    })
-}
-
-const updateArticleYear = (req, res) => {
-    const year = req.params.year
-    articles.update({ year }, { $set : req.body}, function (err) {
-      if (err) {
-          res.status(500).send({ message: err.message })
-      } else {
-          res.status(200).send({ message: "Year of publication updated succesfuly!"})
-      } 
-    })
-}
-
-const updateArticleDoi = (req, res) => {
-    const linkDOI = req.params.linkDOI
-    articles.update({ linkDOI }, { $set : req.body}, function (err) {
-      if (err) {
-          res.status(500).send({ message: err.message })
-      } else {
-          res.status(200).send({ message: "Link DOI updated succesfuly!"})
-      }
-    })
-}
-
-const updateArticleImages = (req, res) => {
-    const images = req.params.images
-    articles.update({ images }, { $set : req.body}, function (err) {
-      if (err) {
-          res.status(500).send({ message: err.message })
-      } else {
-          res.status(200).send({ message: "Images updated succesfuly!"})
-      } 
     })
 }
 
@@ -407,12 +352,7 @@ module.exports = {
     updateArticleResumen,
     updateArticleResults,
     updateArticleKeywords,
-    updateArticleCountry,
     updateArticleAreas,
-    updateArticleLanguage,
-    updateArticleYear,
-    updateArticleDoi,
-    updateArticleImages,
     deleteArticle,
     getAllAuthors,
     createAuthorProfile,
@@ -421,8 +361,6 @@ module.exports = {
     updateAuthor,
     updateAuthorName,
     updateAuthorCitation,
-    updateAuthorNationality,
-    updateAuthorGender,
     updateAuthorAffiliation,
     updateAuthorAreas,
     updateAuthorProject,
