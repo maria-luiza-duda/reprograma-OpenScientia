@@ -15,7 +15,7 @@ let db = mongoose.connection;
 db.on("error", console.log.bind(console, "connection error:"))
 db.once("open", () => console.log("Succesful connection"))
 
-const index = require("./routes/index")
+//const index = require("./routes/index")
 const articles = require("./routes/articlesRoute")
 const authors = require("./routes/authorsRoute")
 
@@ -30,7 +30,9 @@ app.use(function (req, res, next) {
     next()
 })
 
-app.use("/", index)
+//app.use("/", index)
+app.use("/", articles)
+app.use("/", authors)
 app.use("/articles", articles)
 app.use("/authors", authors)
 
