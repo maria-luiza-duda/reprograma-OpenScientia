@@ -3,14 +3,25 @@
     <p align="center">OpenScientia Projeto Final Backend {Reprograma} <p>
 </h1>
 
-## Olá, este é o meu projeto final de Backend da Reprograma, o OpenScientia.
+<h2 align="center">
+    <br>
+    <p align="center">Olá, este é o meu projeto final de Backend da Reprograma, o OpenScientia.<p>
+</h2> 
+
 ![OpenScientiaLogo](./frontend/images/OPEN.jpg)
-### Problemática e objetivo geral do projeto.
+<h3 align="center">
+    <br>
+    <p align="center">Problemática e objetivo geral do projeto.<p>
+</h3>
+
 Surgiu da necessidade de comunicar a ciência de forma simples para pessoas que não são da área acadêmica, mas que desejam se atualizar com publicações de artigos científicos. Seu objetivo principal é democratizar o acesso a informação produzida pelas universidades públicas.
 
 Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação científica de seus próprios artigos e projetos. Para estudantes do ensino básico e comunidade em geral, uma oportunidade de se manter livre de fake news, a favor da ciência e principalmente, informadxs com a verdade.
 
-## Tecnologias utilizadas no desenvolvimento
+<h2 align="center">
+    <br>
+    <p align="center">Tecnologias utilizadas no desenvolvimento<p>
+</h2>
 
 * JavaScript
 * Node.js
@@ -18,9 +29,16 @@ Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação cient
 * Postman
 * Heroku
 
-## Contratos e rotas das entidades
+<h2 align="center">
+    <br>
+    <p align="center">Contratos e rotas das entidades<p>
+</h2>
 
-### Entidade Autores
+
+<h3 align="center">
+    <br>
+    <p align="center">Entidade Autores<p>
+</h3>
 
 | Método   |  Rota        | Contrato  |
 |:--------:|:-------------| ------- |
@@ -38,7 +56,10 @@ Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação cient
 | PATCH | /:id/following | Altera apenas o status de seguindo pesquisad@r |
 | DELETE | /:id | Deleta o perfil d@ pesquisad@r |
 
-### Entidade Artigos
+<h3 align="center">
+    <br>
+    <p align="center">Entidade Artigos<p>
+</h3>
 
 | Método   |  Rota        | Contrato  |
 |:--------:|:-------------| ------- |
@@ -59,7 +80,10 @@ Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação cient
 | PATCH | /:id/read | Altera apenas o status de artigo lido |
 | DELETE | /:id | Deleta o artigo publicado na plataforma |
 
-## Implementações futuras
+<h align="center">
+    <br>
+    <p align="center">Implementações futuras<p>
+</h2>
 
 * Adição de uma nova entidade de usuários
 * Desenvolvimento do front-end do projeto
