@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const controller = require('../controllers/translateController.js')
+const controller = require('../controllers/authorsController.js')
 
 router.get("/", controller.getAllAuthors)
 router.post("/", controller.createPassword)

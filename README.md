@@ -80,7 +80,7 @@ Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação cient
 | PATCH | /:id/read | Altera apenas o status de artigo lido |
 | DELETE | /:id | Deleta o artigo publicado na plataforma |
 
-<h align="center">
+<h2 align="center">
     <br>
     <p align="center">Implementações futuras<p>
 </h2>
