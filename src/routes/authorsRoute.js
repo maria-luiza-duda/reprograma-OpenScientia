@@ -4,7 +4,7 @@ const controller = require('../controllers/translateController.js')
 
 router.get("/", controller.getAllAuthors)
 router.post("/", controller.createPassword)
-router.post("/", controller.login)
+router.post("/login", controller.login)
 router.get("/name", controller.getAuthorsByName)
 router.get("/citation", controller.getAuthorsByCitation)
 router.put("/", controller.updateAuthor)

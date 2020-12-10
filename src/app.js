@@ -29,7 +29,7 @@ app.use(function (req, res, next) {
     next()
 })
 
-app.use("/", articles)
-app.use("/", authors)
+app.use("/articles", articles)
+app.use("/authors", authors)
 
 module.exports = app

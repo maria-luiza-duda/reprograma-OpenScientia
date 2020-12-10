@@ -170,9 +170,9 @@ const updateReadStatus = (req, res) => {
 
 const deleteArticle = (req, res) => {
     const id = req.params.id
-        articles.find({ id }, function(err, articles){
-        if(articles.length > 0){
-            articles.deleteMany({ id }, function(err){
+        articles.find({ id }, function(err, article){
+        if(article.length > 0){
+            articles.deleteOne({ id }, function(err){
                 if (err) {
                     res.status(500).send({ 
                     message: err.message,
@@ -207,8 +207,8 @@ const getAllAuthors = (req, res) => {
 const createPassword = (req, res) => {
     const password = bcrypt.hashSync(req.body.password, 10);
   req.body.password = password;
-  const authors = new authors(req.body);
-  authors.save(function(err) {
+  const author = new authors(req.body);
+  author.save(function(err) {
     if (err) {
       res.status(500).send({ message: err.message })
     } else {
@@ -336,9 +336,9 @@ const updateFollowingStatus = (req, res) => {
 
 const deleteAuthor = (req, res) => {
     const id = req.params.id
-        authors.find({ id }, function(err, authors){
-        if(authors.length > 0){
-            authors.deleteMany({ id }, function(err){
+        authors.find({ id }, function(err, author){
+        if(author.length > 0){
+            authors.deleteOne({ id }, function(err){
                 if (err) {
                     res.status(500).send({ 
                     message: err.message,
