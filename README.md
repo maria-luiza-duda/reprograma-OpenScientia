@@ -18,30 +18,48 @@ Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação cient
 * Postman
 * Heroku
 
-## Contratos das entidades
+## Contratos e rotas das entidades
 
 ### Entidade Autores
-#### Cadastro de nov@ pesquisador@ no Open Scientia
-Registro com cadastro de nome completo, nome de citação, nacionalidade, gênero, idade, filiação atual, áreas de estudo/pesquisa, subáreas de estudo/pesquisa, projetos atuais, artigos já cadastrados com primeiro autor, artigos á cadastrados como coautor, inserção de foto, email, curriculo Lattes, conta do researchGate e perfil do LinkedIn.
 
-#### Atualização de perfil de pesquisador@ cadastrad@ 
-Itens para atualização do cadastro (os mesmos do item anterior): nome completo, nome de citação, nacionalidade, gênero, idade, filiação atual, áreas de estudo/pesquisa, subáreas de estudo/pesquisa, projetos atuais, artigos já cadastrados com primeiro autor, artigos á cadastrados como coautor, inserção de foto, email, curriculo Lattes, conta do researchGate e perfil do LinkedIn.
-
-#### Seguir outros pesquisadores
-...
+| Método   |  Rota        | Contrato  |
+|:--------:|:-------------| ------- |
+| GET | / | Lista todos os pesquisadores cadastrados |
+| POST | / | Cria uma senha para cadastro no OpenScientia |
+| POST | /login | Cadastra um login com email e senha para os pesquisadores|
+| GET | /name | Procura pelo nome, pesquisadores já cadastrados |
+| GET | /citation | Procura pelo nome de citação, pesquisadores já cadastrados |
+| PUT | / | Altera informações dos autores |
+| PATCH | /name | Altera apenas o nome d@ pesquisad@r |
+| PATCH | /citation | Altera apenas o nome de citação d@ pesquisad@r |
+| PATCH | /currentAffiliation | Altera apenas a atual filiação institucional d@ pesquisad@r |
+| PATCH | /areas | Altera apenas a área de estudo d@ pesquisad@r |
+| PATCH | /currentProject | Altera apenas o projeto atual d@ pesquisad@r |
+| PATCH | /:id/following | Altera apenas o status de seguindo pesquisad@r |
+| DELETE | /:id | Deleta o perfil d@ pesquisad@r |
 
 ### Entidade Artigos
-#### Inserção de novo artigo no Open Scientia
-Itens para inserir um novo artigo na plataforma: título,
 
-#### Atualização de artigo já postado
-...
+| Método   |  Rota        | Contrato  |
+|:--------:|:-------------| ------- |
+| GET | / | Lista todos os artigos publicados no OpenScientia |
+| POST | / | Cria um novo artigo (apenas pesquisadores podem fazê-lo) |
+| GET | /title | Procura pelo título, artigos já cadastrados|
+| GET | /author | Procura pelo nome do autor, artigos já cadastrados |
+| GET | /keywords | Procura por palavras chaves, artigos já cadastrados |
+| GET | /areas | Procura pela área de estudo, artigos já cadastrados |
+| GET | /year | Procura pelo ano de publicação, artigos já cadastrados |
+| PUT | / | Altera informações dos artigos |
+| PATCH | /title | Altera apenas o título do artigo |
+| PATCH | /author | Altera apenas o nome do autor do artigo |
+| PATCH | /resumen | Altera apenas o resumo do artigo |
+| PATCH | /results | Altera apenas os resultados do artigo |
+| PATCH | /keywords | Altera apenas as palavras chaves do artigo |
+| PATCH | /areas | Altera apenas as áreas de estudo do artigo |
+| PATCH | /:id/read | Altera apenas o status de artigo lido |
+| DELETE | /:id | Deleta o artigo publicado na plataforma |
 
-#### Atualizar status de leitura de artigos
-...
+## Implementações futuras
 
-## Funcionamento das rotas de Artigos
-Os pesquisadores poderão se cadastrar, atualizar seus cadastros, cadastrar seus artigos, ler artigos de outros pesquisadores e seguir pesquisadores. 
-Os usuários poderão se cadastrar, atualizar seus cadastros, ler artigos já postados e seguir pesquisadores. 
-
-## Funcionamento das rotas de Autores
+* Adição de uma nova entidade de usuários
+* Desenvolvimento do front-end do projeto
