@@ -9,19 +9,13 @@
 </h2> 
 
 ![OpenScientiaLogo](./frontend/images/OPEN.jpg)
-<h3 align="center">
-    <br>
-    <p align="center">Problemática e objetivo geral do projeto.<p>
-</h3>
+### Problemática e objetivo geral do projeto.<p>
 
 Surgiu da necessidade de comunicar a ciência de forma simples para pessoas que não são da área acadêmica, mas que desejam se atualizar com publicações de artigos científicos. Seu objetivo principal é democratizar o acesso a informação produzida pelas universidades públicas.
 
 Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação científica de seus próprios artigos e projetos. Para estudantes do ensino básico e comunidade em geral, uma oportunidade de se manter livre de fake news, a favor da ciência e principalmente, informadxs com a verdade.
 
-<h2 align="center">
-    <br>
-    <p align="center">Tecnologias utilizadas no desenvolvimento<p>
-</h2>
+## Tecnologias utilizadas no desenvolvimento<p>
 
 * JavaScript
 * Node.js
@@ -29,16 +23,9 @@ Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação cient
 * Postman
 * Heroku
 
-<h2 align="center">
-    <br>
-    <p align="center">Contratos e rotas das entidades<p>
-</h2>
+## Contratos e rotas das entidades<p>
 
-
-<h3 align="center">
-    <br>
-    <p align="center">Entidade Autores<p>
-</h3>
+### Entidade Autores
 
 | Método   |  Rota        | Contrato  |
 |:--------:|:-------------| ------- |
@@ -56,10 +43,7 @@ Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação cient
 | PATCH | /:id/following | Altera apenas o status de seguindo pesquisad@r |
 | DELETE | /:id | Deleta o perfil d@ pesquisad@r |
 
-<h3 align="center">
-    <br>
-    <p align="center">Entidade Artigos<p>
-</h3>
+### Entidade Artigos
 
 | Método   |  Rota        | Contrato  |
 |:--------:|:-------------| ------- |
@@ -80,10 +64,11 @@ Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação cient
 | PATCH | /:id/read | Altera apenas o status de artigo lido |
 | DELETE | /:id | Deleta o artigo publicado na plataforma |
 
-<h2 align="center">
-    <br>
-    <p align="center">Implementações futuras<p>
-</h2>
+## Implementações futuras
 
 * Adição de uma nova entidade de usuários
 * Desenvolvimento do front-end do projeto
+
+## Link da API no Heroku
+
+<a href: https://openscientia.herokuapp.com/ target: blank> OpenScientia no Heroku </a>
