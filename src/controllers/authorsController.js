@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
 
 const getallauthors = (req, res) => {
-    console.log(req.url)
     authors.find(function(err, authors){
         if (err) {
             res.status(500).send({ message: err.message})
