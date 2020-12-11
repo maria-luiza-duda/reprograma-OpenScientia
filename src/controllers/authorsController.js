@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
 
-const getAllAuthors = (req, res) => {
+const getallauthors = (req, res) => {
     console.log(req.url)
     authors.find(function(err, authors){
         if (err) {
@@ -14,7 +14,7 @@ const getAllAuthors = (req, res) => {
     })
 }
 
-const createPassword = (req, res) => {
+const createpassword = (req, res) => {
     const password = bcrypt.hashSync(req.body.password, 10);
   req.body.password = password;
   const author = new authors(req.body);
@@ -45,7 +45,7 @@ const login = (req, res) => {
     });
   }
 
-const getAuthorsByName = (req, res) => {
+const getbyname = (req, res) => {
     const parametros = req.query
     authors.find(parametros, function (err, authors) {
         if (err) {
@@ -56,7 +56,7 @@ const getAuthorsByName = (req, res) => {
     })
 }
 
-const getAuthorsByCitation = (req, res) => {
+const getbycitation = (req, res) => {
     const parametros = req.query
     authors.find(parametros, function (err, authors) {
         if (err) {
@@ -67,7 +67,7 @@ const getAuthorsByCitation = (req, res) => {
     })
 }
 
-const updateAuthor = (req, res) => {
+const updateauthor = (req, res) => {
     const id = req.params.id
     authors.updateMany({ id }, { $set : req.body}, { upsert : true }, function (err) {
       if (err) {
@@ -78,7 +78,7 @@ const updateAuthor = (req, res) => {
     })
 }
 
-const updateAuthorName = (req, res) => {
+const updatename = (req, res) => {
     const name = req.params.name
     authors.update({ name }, { $set : req.body}, function (err) {
         if (err) {
@@ -89,7 +89,7 @@ const updateAuthorName = (req, res) => {
     })
 }
 
-const updateAuthorCitation = (req, res) => {
+const updatecitation = (req, res) => {
     const citation = req.params.citation
     authors.update({ citation }, { $set : req.body}, function (err) {
         if (err) {
@@ -100,7 +100,7 @@ const updateAuthorCitation = (req, res) => {
     })
 }
 
-const updateAuthorAffiliation = (req, res) => {
+const updateaffiliation = (req, res) => {
     const currentAffiliation = req.params.currentAffiliation
     authors.update({ currentAffiliation }, { $set : req.body}, function (err) {
         if (err) {
@@ -111,7 +111,7 @@ const updateAuthorAffiliation = (req, res) => {
     })
 }
 
-const updateAuthorAreas = (req, res) => {
+const updateareas = (req, res) => {
     const areas = req.params.areas
     authors.update({ areas }, { $set : req.body}, function (err) {
         if (err) {
@@ -122,7 +122,7 @@ const updateAuthorAreas = (req, res) => {
     })
 }
 
-const updateAuthorProject = (req, res) => {
+const updateproject = (req, res) => {
     const currentProject = req.params.currentProject
     authors.update({ currentProject }, { $set : req.body}, function (err) {
         if (err) {
@@ -133,7 +133,7 @@ const updateAuthorProject = (req, res) => {
     })
 }
 
-const updateFollowingStatus = (req, res) => {
+const updatefollowingstatus = (req, res) => {
     const following = req.params.following
     authors.update({ following }, { $set : req.body}, function (err) {
       if (err) {
@@ -144,7 +144,7 @@ const updateFollowingStatus = (req, res) => {
     })
 }
 
-const deleteAuthor = (req, res) => {
+const deleteauthor = (req, res) => {
     const id = req.params.id
         authors.find({ id }, function(err, author){
         if(author.length > 0){
@@ -171,17 +171,17 @@ const deleteAuthor = (req, res) => {
 }
 
 module.exports = {
-    getAllAuthors,
-    createPassword,
+    getallauthors,
+    createpassword,
     login,
-    getAuthorsByName,
-    getAuthorsByCitation,
-    updateAuthor,
-    updateAuthorName,
-    updateAuthorCitation,
-    updateAuthorAffiliation,
-    updateAuthorAreas,
-    updateAuthorProject,
-    updateFollowingStatus,
-    deleteAuthor
+    getbyname,
+    getbycitation,
+    updateauthor,
+    updatename,
+    updatecitation,
+    updateaffiliation,
+    updateareas,
+    updateproject,
+    updatefollowingstatus,
+    deleteauthor
 }

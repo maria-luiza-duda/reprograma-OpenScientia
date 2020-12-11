@@ -1,6 +1,6 @@
 const articles = require('../models/articles')
 
-const getAllArticles = (req, res) => {
+const getallarticles = (req, res) => {
     articles.find(function (err, articles) {
         if (err) {
             res.status(500).send({ message: err.message})
@@ -10,7 +10,7 @@ const getAllArticles = (req, res) => {
     })
 }
 
-const createArticle = (req, res) => {
+const createarticle = (req, res) => {
     let article = new articles(req.body);
     article.save(function(err){
         if (err) {
@@ -21,7 +21,7 @@ const createArticle = (req, res) => {
     })
 }
 
-const getArticlesByTitle = (req, res) => {
+const getbytitle = (req, res) => {
     const parametros = req.query
     articles.find(parametros, function (err, articles) {
         if (err) {
@@ -32,7 +32,7 @@ const getArticlesByTitle = (req, res) => {
     })
 }
 
-const getArticlesByAuthor = (req, res) => {
+const getbyauthor = (req, res) => {
     const parametros = req.query
     articles.find(parametros, function (err, articles) {
         if (err) {
@@ -43,7 +43,7 @@ const getArticlesByAuthor = (req, res) => {
     })
 }
 
-const getArticlesByKeywords = (req, res) => {
+const getbykeywords = (req, res) => {
     const parametros = req.query
     articles.find(parametros, function (err, articles) {
         if (err) {
@@ -54,7 +54,7 @@ const getArticlesByKeywords = (req, res) => {
     })
 }
 
-const getArticlesByAreas = (req, res) => {
+const getbyareas = (req, res) => {
     const parametros = req.query
     articles.find(parametros, function (err, articles) {
         if (err) {
@@ -65,7 +65,7 @@ const getArticlesByAreas = (req, res) => {
     })
 }
 
-const getArticlesByYear = (req, res) => {
+const getbyyear = (req, res) => {
     const parametros = req.query
     articles.find(parametros, function (err, articles) {
         if (err) {
@@ -76,7 +76,7 @@ const getArticlesByYear = (req, res) => {
     })
 }
 
-const updateArticle = (req, res) => {
+const updatearticle = (req, res) => {
   const id = req.params.id
   articles.updateMany({ id }, { $set : req.body}, { upsert : true }, function (err) {
     if (err) {
@@ -87,7 +87,7 @@ const updateArticle = (req, res) => {
   })
 }
 
-const updateArticleTitle = (req, res) => {
+const updatetitle = (req, res) => {
     const title = req.params.title
     articles.update({ title }, { $set : req.body}, function (err) {
       if (err) {
@@ -98,7 +98,7 @@ const updateArticleTitle = (req, res) => {
     })
   }
 
-const updateArticleAuthor = (req, res) => {
+const updateauthor = (req, res) => {
     const author = req.params.title
     articles.update({ author }, { $set : req.body}, function (err) {
       if (err) {
@@ -109,7 +109,7 @@ const updateArticleAuthor = (req, res) => {
     })  
 }
 
-const updateArticleResumen = (req, res) => {
+const updateresumen = (req, res) => {
     const resumen = req.params.resumen
     articles.update({ resumen }, { $set : req.body}, function (err) {
       if (err) {
@@ -120,7 +120,7 @@ const updateArticleResumen = (req, res) => {
     })
 }
 
-const updateArticleResults = (req, res) => {
+const updateresults = (req, res) => {
     const results = req.params.results
     articles.update({ results }, { $set : req.body}, function (err) {
       if (err) {
@@ -131,7 +131,7 @@ const updateArticleResults = (req, res) => {
     })
 }
 
-const updateArticleKeywords = (req, res) => {
+const updatekeywords = (req, res) => {
     const keywords = req.params.keywords
     articles.update({ keywords }, { $set : req.body}, function (err) {
       if (err) {
@@ -142,7 +142,7 @@ const updateArticleKeywords = (req, res) => {
     })
 }
 
-const updateArticleAreas = (req, res) => {
+const updateareas = (req, res) => {
     const areas = req.params.areas
     articles.update({ areas }, { $set : req.body}, function (err) {
       if (err) {
@@ -153,7 +153,7 @@ const updateArticleAreas = (req, res) => {
     })
 }
 
-const updateReadStatus = (req, res) => {
+const updatereadstatus = (req, res) => {
     const read = req.params.id
     articles.update({ read }, { $set : req.body}, function (err) {
       if (err) {
@@ -164,7 +164,7 @@ const updateReadStatus = (req, res) => {
     })
 }
 
-const deleteArticle = (req, res) => {
+const deletearticle = (req, res) => {
     const id = req.params.id
         articles.find({ id }, function(err, article){
         if(article.length > 0){
@@ -190,20 +190,20 @@ const deleteArticle = (req, res) => {
 }
 
 module.exports = {
-    getAllArticles,
-    createArticle,
-    getArticlesByTitle,
-    getArticlesByAuthor,
-    getArticlesByKeywords,
-    getArticlesByAreas,
-    getArticlesByYear,
-    updateArticle,
-    updateArticleTitle,
-    updateArticleAuthor,
-    updateArticleResumen,
-    updateArticleResults,
-    updateArticleKeywords,
-    updateArticleAreas,
-    updateReadStatus,
-    deleteArticle,
+    getallarticles,
+    createarticle,
+    getbytitle,
+    getbyauthor,
+    getbykeywords,
+    getbyareas,
+    getbyyear,
+    updatearticle,
+    updatetitle,
+    updateauthor,
+    updateresumen,
+    updateresults,
+    updatekeywords,
+    updateareas,
+    updatereadstatus,
+    deletearticle,
 }
