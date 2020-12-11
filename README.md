@@ -35,11 +35,11 @@ Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação cient
 | GET | /name | Procura pelo nome, pesquisadores já cadastrados |
 | GET | /citation | Procura pelo nome de citação, pesquisadores já cadastrados |
 | PUT | / | Altera informações dos autores |
-| PATCH | /name | Altera apenas o nome d@ pesquisad@r |
-| PATCH | /citation | Altera apenas o nome de citação d@ pesquisad@r |
-| PATCH | /currentAffiliation | Altera apenas a atual filiação institucional d@ pesquisad@r |
-| PATCH | /areas | Altera apenas a área de estudo d@ pesquisad@r |
-| PATCH | /currentProject | Altera apenas o projeto atual d@ pesquisad@r |
+| PATCH | /upname | Altera apenas o nome d@ pesquisad@r |
+| PATCH | /upcitation | Altera apenas o nome de citação d@ pesquisad@r |
+| PATCH | /upcurrentAffiliation | Altera apenas a atual filiação institucional d@ pesquisad@r |
+| PATCH | /upareas | Altera apenas a área de estudo d@ pesquisad@r |
+| PATCH | /upcurrentProject | Altera apenas o projeto atual d@ pesquisad@r |
 | PATCH | /:id/following | Altera apenas o status de seguindo pesquisad@r |
 | DELETE | /:id | Deleta o perfil d@ pesquisad@r |
 
@@ -55,12 +55,12 @@ Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação cient
 | GET | /areas | Procura pela área de estudo, artigos já cadastrados |
 | GET | /year | Procura pelo ano de publicação, artigos já cadastrados |
 | PUT | / | Altera informações dos artigos |
-| PATCH | /title | Altera apenas o título do artigo |
-| PATCH | /author | Altera apenas o nome do autor do artigo |
-| PATCH | /resumen | Altera apenas o resumo do artigo |
-| PATCH | /results | Altera apenas os resultados do artigo |
-| PATCH | /keywords | Altera apenas as palavras chaves do artigo |
-| PATCH | /areas | Altera apenas as áreas de estudo do artigo |
+| PATCH | /uptitle | Altera apenas o título do artigo |
+| PATCH | /upauthor | Altera apenas o nome do autor do artigo |
+| PATCH | /upresumen | Altera apenas o resumo do artigo |
+| PATCH | /upresults | Altera apenas os resultados do artigo |
+| PATCH | /upkeywords | Altera apenas as palavras chaves do artigo |
+| PATCH | /upareas | Altera apenas as áreas de estudo do artigo |
 | PATCH | /:id/read | Altera apenas o status de artigo lido |
 | DELETE | /:id | Deleta o artigo publicado na plataforma |
 
@@ -71,4 +71,4 @@ Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação cient
 
 ## Link da API no Heroku
 
-<a href: https://openscientia.herokuapp.com/ target: blank> OpenScientia no Heroku </a>
+https://openscientia.herokuapp.com/
