@@ -11,9 +11,9 @@
 ![OpenScientiaLogo](./frontend/images/OPEN.jpg)
 ### Problemática e objetivo geral do projeto.<p>
 
-Surgiu da necessidade de comunicar a ciência de forma simples para pessoas que não são da área acadêmica, mas que desejam se atualizar com publicações de artigos científicos. Seu objetivo principal é democratizar o acesso a informação produzida pelas universidades públicas.
+<p align="justify"> Surgiu da necessidade de comunicar a ciência de forma simples para pessoas que não são da área acadêmica, mas que desejam se atualizar com publicações de artigos científicos. Seu objetivo principal é democratizar o acesso a informação produzida pelas universidades públicas.
 
-Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação científica de seus próprios artigos e projetos. Para estudantes do ensino básico e comunidade em geral, uma oportunidade de se manter livre de fake news, a favor da ciência e principalmente, informadxs com a verdade.
+Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação científica de seus próprios artigos e projetos. Para estudantes do ensino básico e comunidade em geral, uma oportunidade de se manter livre de fake news, a favor da ciência e principalmente, informadxs com a verdade. </p>
 
 ## Tecnologias utilizadas no desenvolvimento<p>
 
@@ -30,16 +30,11 @@ Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação cient
 | Método   |  Rota        | Contrato  |
 |:--------:|:-------------| ------- |
 | GET | / | Lista todos os pesquisadores cadastrados |
-| POST | / | Cria uma senha para cadastro no OpenScientia |
-| POST | /login | Cadastra um login com email e senha para os pesquisadores|
 | GET | /name | Procura pelo nome, pesquisadores já cadastrados |
 | GET | /citation | Procura pelo nome de citação, pesquisadores já cadastrados |
+| POST | / | Cria uma senha para cadastro no OpenScientia |
+| POST | /login | Cadastra um login com email e senha para os pesquisadores|
 | PUT | / | Altera informações dos autores |
-| PATCH | /upname | Altera apenas o nome d@ pesquisad@r |
-| PATCH | /upcitation | Altera apenas o nome de citação d@ pesquisad@r |
-| PATCH | /upcurrentAffiliation | Altera apenas a atual filiação institucional d@ pesquisad@r |
-| PATCH | /upareas | Altera apenas a área de estudo d@ pesquisad@r |
-| PATCH | /upcurrentProject | Altera apenas o projeto atual d@ pesquisad@r |
 | PATCH | /:id/following | Altera apenas o status de seguindo pesquisad@r |
 | DELETE | /:id | Deleta o perfil d@ pesquisad@r |
 
