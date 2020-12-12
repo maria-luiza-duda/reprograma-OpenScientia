@@ -77,61 +77,6 @@ const updateauthor = (req, res) => {
     })
 }
 
-const updatename = (req, res) => {
-    const name = req.params.name
-    authors.update({ name }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "Name updated succesfuly!"})
-        }
-    })
-}
-
-const updatecitation = (req, res) => {
-    const citation = req.params.citation
-    authors.update({ citation }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-             res.status(200).send({ message: "Citation name updated succesfuly!"})
-        }
-    })
-}
-
-const updateaffiliation = (req, res) => {
-    const currentAffiliation = req.params.currentAffiliation
-    authors.update({ currentAffiliation }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "Current affiliation updated succesfuly!"})
-        }
-    })
-}
-
-const updateareas = (req, res) => {
-    const areas = req.params.areas
-    authors.update({ areas }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "Areas of interest updated succesfuly!"})
-        }
-    })
-}
-
-const updateproject = (req, res) => {
-    const currentProject = req.params.currentProject
-    authors.update({ currentProject }, { $set : req.body}, function (err) {
-        if (err) {
-            res.status(500).send({ message: err.message })
-        } else {
-            res.status(200).send({ message: "Current project updated succesfuly!"})
-        }
-    })
-}
-
 const updatefollowingstatus = (req, res) => {
     const following = req.params.following
     authors.update({ following }, { $set : req.body}, function (err) {
@@ -176,11 +121,6 @@ module.exports = {
     getbyname,
     getbycitation,
     updateauthor,
-    updatename,
-    updatecitation,
-    updateaffiliation,
-    updateareas,
-    updateproject,
     updatefollowingstatus,
     deleteauthor
 }

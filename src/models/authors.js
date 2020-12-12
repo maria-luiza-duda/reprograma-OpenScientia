@@ -5,7 +5,7 @@ const authorsSchema = new mongoose.Schema({
     id: {type : Number},
     name: {type : String},
     citation: {type : String},
-    currentAffiliation: {type : String},
+    affiliation: {type : String},
     areas: {type : String},
     currentProject: {type : String},
     email: {type : String},
