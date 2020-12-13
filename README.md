@@ -9,7 +9,11 @@
 </h2> 
 
 ![OpenScientiaLogo](./frontend/images/OPEN.jpg)
-### Problemática e objetivo geral do projeto.<p>
+
+## Democratização do acesso a informação de qualidade e produção científica das Universidades brasileiras.
+## CONTRA O NEGACIONISMO CIENTÍFICO
+
+### Problemática e objetivo geral do projeto.
 
 <p align="justify"> Surgiu da necessidade de comunicar a ciência de forma simples para pessoas que não são da área acadêmica, mas que desejam se atualizar com publicações de artigos científicos. Seu objetivo principal é democratizar o acesso a informação produzida pelas universidades públicas.
 

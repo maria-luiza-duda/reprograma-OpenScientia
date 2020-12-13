@@ -19,4 +19,4 @@ router.patch("/upareas", controller.updateareas)
 router.patch("/:id/read", controller.updatereadstatus)
 router.delete("/:id", controller.deletearticle)
 
-module.exports = router;
+module.exports = router
