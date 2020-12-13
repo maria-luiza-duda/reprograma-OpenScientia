@@ -8,7 +8,7 @@
     <p align="center">Olá, este é o meu projeto final de Backend da Reprograma, o OpenScientia.<p>
 </h2> 
 
-![OpenScientiaProblemática](./frontend/images/OPEN.jpg)
+![OpenScientiaProblemática](./frontend/images/OPENcutted.jpg)
 
 ## Democratização do acesso a informação de qualidade e produção científica das Universidades brasileiras.
 
@@ -77,8 +77,13 @@ Pensando nisso, o OpenScientia é projeto de Divulgação Científica que busca 
 ## Implementações futuras
 
 * Adição de uma nova entidade de usuários
+* Adição de novas rotas nas entidades de artigos e autores
 * Desenvolvimento do front-end do projeto
 
 ## Link da API no Heroku
 
 https://openscientia.herokuapp.com/
+
+## Agradecimentos
+
+Agradeço a Reprograma pela oportunidade, professoras, monitoras e a minhas colegas de turma!

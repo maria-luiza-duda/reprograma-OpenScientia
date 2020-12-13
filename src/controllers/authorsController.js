@@ -14,7 +14,7 @@ const getallauthors = (req, res) => {
 }
 
 const createauthor = (req, res) => {
-    let author = new author(req.body);
+    let author = new authors(req.body);
     author.save(function(err){
         if (err) {
             res.status(500).send({ message: err.message})
