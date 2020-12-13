@@ -13,6 +13,17 @@ const getallauthors = (req, res) => {
     })
 }
 
+const createauthor = (req, res) => {
+    let author = new author(req.body);
+    author.save(function(err){
+        if (err) {
+            res.status(500).send({ message: err.message})
+        } else {
+            res.status(201).send({message : "Author succesfull added"})
+        }  
+    })
+}
+
 const createpassword = (req, res) => {
     const password = bcrypt.hashSync(req.body.password, 10);
   req.body.password = password;
@@ -116,6 +127,7 @@ const deleteauthor = (req, res) => {
 
 module.exports = {
     getallauthors,
+    createauthor,
     createpassword,
     login,
     getbyname,

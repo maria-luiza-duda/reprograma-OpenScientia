@@ -8,18 +8,30 @@
     <p align="center">Olá, este é o meu projeto final de Backend da Reprograma, o OpenScientia.<p>
 </h2> 
 
-![OpenScientiaLogo](./frontend/images/OPEN.jpg)
+![OpenScientiaProblemática](./frontend/images/OPEN.jpg)
 
 ## Democratização do acesso a informação de qualidade e produção científica das Universidades brasileiras.
-## CONTRA O NEGACIONISMO CIENTÍFICO
 
 ### Problemática e objetivo geral do projeto.
 
-<p align="justify"> Surgiu da necessidade de comunicar a ciência de forma simples para pessoas que não são da área acadêmica, mas que desejam se atualizar com publicações de artigos científicos. Seu objetivo principal é democratizar o acesso a informação produzida pelas universidades públicas.
+Você provavelmente já escutou, ou leu, uma dessas frases durante a sua vida:
+* A Terra é plana!
+* Aquecimento Global não existe!
+* A NASA é uma farsa...
+* Mandaram aqui no grupo do zap!!
 
-Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação científica de seus próprios artigos e projetos. Para estudantes do ensino básico e comunidade em geral, uma oportunidade de se manter livre de fake news, a favor da ciência e principalmente, informadxs com a verdade. </p>
+E durante a pandemia do Covid-19 então...
+* É uma gripezinha!
+* Estamos no finalzinho da pandemia.
+* Essa vacina é água!
 
-## Tecnologias utilizadas no desenvolvimento<p>
+Essas frases são consequencias da disseminação de fake news para a população em geral. A ciência, em sua essência, nos dá respostas para diversos questonamentos do universo, se baseando em estudos metodológicos, estudos á realizados anteriormente e claro, muita experimentação!
+
+Porém, a ciência tem perdido a sua credibilidade e espaço pois a linguagem utilizada não é democrática. Os artigos científicos que são publicados possuem uma tipologia técnica, na qual restringe a leitura da comunidade em geral.
+
+Pensando nisso, o OpenScientia é projeto de Divulgação Científica que busca disponibilizar artigos cientificos numa linguagem mais acessível e mais dinâmica, democratizando o acesso a informação de qualidade.
+
+## Tecnologias utilizadas no desenvolvimento
 
 * JavaScript
 * Node.js
@@ -27,8 +39,7 @@ Para os pesquisadorxs trata-se de uma oportunidade de fazer a divulgação cient
 * Postman
 * Heroku
 
-## Contratos e rotas das entidades<p>
-
+## Contratos e rotas das entidades
 ### Entidade Autores
 
 | Método   |  Rota        | Contrato  |
