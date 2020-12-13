@@ -8,7 +8,7 @@
     <p align="center">Olá, este é o meu projeto final de Backend da Reprograma, o OpenScientia.<p>
 </h2> 
 
-![OpenScientiaProblemática](./frontend/images/OPENcutted.jpg)
+![OpenScientiaProblemática](./frontend/images/OPEN.jpg)
 
 ## Democratização do acesso a informação de qualidade e produção científica das Universidades brasileiras.
 
